@@ -1,8 +1,9 @@
+from time import time
 from llama_index.core import Settings, SimpleDirectoryReader, VectorStoreIndex
 from llama_index.core.evaluation import (
 	DatasetGenerator,
-	FaithfullnessEvaluator,
-	RelevancyEvaluator,
+	# FaithfullnessEvaluator,
+	# RelevancyEvaluator,
 )
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms.ollama import Ollama
@@ -18,6 +19,10 @@ documents = SimpleDirectoryReader(
 	input_files=[get_project_path("docs/2307.09288v2.pdf")]
 ).load_data()
 
+
 eval_documents = documents[:3]
 data_generator = DatasetGenerator.from_documents(eval_documents)
+start = time()
 eval_questions = data_generator.generate_questions_from_nodes()
+end = time()
+print(end - start)
