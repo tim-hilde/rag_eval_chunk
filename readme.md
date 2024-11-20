@@ -8,7 +8,7 @@ Implemantion of <https://medium.com/@imabhi1216/basic-to-advanced-rag-using-llam
 
 The following are prerequisites to run this codebase:
 
-- Python
+- Python 3.10.6
 - Poetry
 - Ollama
 
