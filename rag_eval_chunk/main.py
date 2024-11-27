@@ -10,7 +10,7 @@ from llama_index.llms.ollama import Ollama
 
 from rag_eval_chunk.utils import get_project_path
 
-llm = Ollama(model="llama3.1", request_timeout=300.0)
+llm = Ollama(model="llama3.1", request_timeout=1200)
 Settings.llm = llm
 Settings.embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
 
